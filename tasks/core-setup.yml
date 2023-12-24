@@ -1,0 +1,23 @@
+- name: Install system packages 1 
+  become: true
+  apt:
+    name: ["build-essential", "htop", "cmake", "xcape", "xclip", "man"]
+  tags:
+    - core
+    - install
+
+- name: Install system packages 2 
+  become: true
+  apt:
+    name: ["unzip", "curl", "git"]
+  tags:
+    - core
+    - install
+
+- name: Install system packages 3 
+  become: true
+  apt:
+    name: ["exa", "gettext", "ripgrep"]
+  tags:
+    - core
+    - install

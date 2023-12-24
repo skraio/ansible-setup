@@ -1,0 +1,8 @@
+- name: Install latex
+  become: true
+  apt:
+    name: ["texlive-full", "latexmk"]
+    update_cache: yes
+  tags:
+    - latex
+    - install

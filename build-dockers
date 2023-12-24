@@ -1,0 +1,1 @@
+docker build -t new-computer:latest -f Dockerfile .

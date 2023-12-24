@@ -1,0 +1,17 @@
+- name: Tools for workflow 1
+  become: true
+  apt:
+    name: ["i3", "polybar", "tmux", "fzf"]
+    update_cache: yes
+  tags:
+    - tools
+    - install
+
+- name: Tools for workflow 2
+  become: true
+  apt:
+    name: ["zathura", "telegram-desktop", "flameshot", "obs-studio"]
+    update_cache: yes
+  tags:
+    - tools
+    - install
