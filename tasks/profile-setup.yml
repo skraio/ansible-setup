@@ -1,0 +1,12 @@
+- name: Update keymap options and add custom scripts directory to PATH in .profile
+  blockinfile:
+    path: "{{ ansible_env.HOME }}/.profile"
+    block: |
+      setxkbmap -option 'caps:ctrl_modifier'
+      xcape -e 'Caps_Lock=Escape;Control_L=Escape'
+      export PATH=$PATH:$HOME/dotfiles/scripts
+    create: true
+    state: present
+  tags:
+    - profile
+    - install
