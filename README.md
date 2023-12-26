@@ -4,7 +4,7 @@ sudo nano /etc/apt/sources.list
 ```
 
 ```bash
-sudo apt install git curl
+sudo apt install curl
 ```
 
 ```bash

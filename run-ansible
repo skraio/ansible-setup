@@ -2,8 +2,8 @@
 
 
 ## Install ansible
-sudo apt-get update -y
-sudo apt-get install -y software-properties-common ansible
+sudo apt update -y
+sudo apt install -y git software-properties-common ansible
 
 
 ## Run local.yml
