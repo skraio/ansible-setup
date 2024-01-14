@@ -8,5 +8,5 @@ sudo apt install curl
 ```
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/tdk141/debian12-ansible/main/run-ansible | sh
+curl -sSL https://raw.githubusercontent.com/skraio/debian12-ansible/main/run-ansible | sh
 ```
