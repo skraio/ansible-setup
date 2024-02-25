@@ -15,3 +15,9 @@
   tags:
     - tools
     - install
+
+- name: Make zathura the default pdf viewer
+  shell: xdg-mime default org.pwmt.zathura.desktop application/pdf
+  tags:
+    - tools
+    - install

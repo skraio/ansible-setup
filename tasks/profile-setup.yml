@@ -1,10 +1,21 @@
-- name: Update keymap options and add custom scripts directory to PATH in .profile
+- name: Configure keymap options and custom scripts directory in .profile
   blockinfile:
     path: "{{ ansible_env.HOME }}/.profile"
     block: |
+      # Set Caps Lock as an additional Control modifier
       setxkbmap -option 'caps:ctrl_modifier'
+
+      # Make Caps Lock act as Escape when pressed alone, and as Control when used with other keys
       xcape -e 'Caps_Lock=Escape;Control_L=Escape'
+
+      # Add custom scripts directory to PATH
       export PATH=$PATH:$HOME/dotfiles/scripts
+
+      # Configure keyboard layout to US and Russian with Win + Spacebar toggle
+      setxkbmap -model pc105 -layout us,ru -option 'grp:win_space_toggle'
+
+      # Set Neovim as the default pager for viewing man pages
+      export MANPAGER='nvim +Man!'
     create: true
     state: present
   tags:

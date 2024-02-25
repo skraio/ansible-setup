@@ -1,6 +1,7 @@
 - hosts: localhost
   vars:
-     - go_version: "1.21.5"
+     - go_version: "1.22.0"
+     - user_name: "skraio"
   pre_tasks:
     - name: Update Apt
       become: true
