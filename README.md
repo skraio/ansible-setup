@@ -8,7 +8,7 @@ Automate the installation of various tools on a clean machine running Debian 12.
 sudo nano /etc/apt/sources.list
 ```
 
-2. Install Ansible 
+2. Install Ansible
 ```bash
 sudo apt update -y
 sudo apt install -y git software-properties-common ansible
@@ -16,5 +16,5 @@ sudo apt install -y git software-properties-common ansible
 
 3. Execute the Ansible Playbook
 ```bash
-ansible-pull -U https://github.com/skraio/debian12-ansible.git --skip-tags latex
+ansible-pull -U https://github.com/skraio/debian12-ansible.git -t basis
 ```

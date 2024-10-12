@@ -4,6 +4,7 @@
   tags:
     - zsh
     - install
+    - basis
 
 - name: Change shell to Zsh
   become: no
@@ -11,9 +12,11 @@
   tags:
     - zsh
     - install
+    - basis
 
 - name: Install Oh-My-Zsh
   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   tags:
     - zsh
     - install
+    - basis

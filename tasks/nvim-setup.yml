@@ -3,6 +3,7 @@
   tags:
     - neovim
     - install
+    - basis
 
 - name: Clone Neovim
   ansible.builtin.git:
@@ -11,12 +12,14 @@
   tags:
     - neovim
     - install
+    - basis
 
 - name: Build Neovim
   shell: "cd {{ lookup('env', 'HOME') }}/neovim && make -j 20"
   tags:
     - neovim
     - install
+    - basis
 
 - name: Install Neovim
   become: true
@@ -24,3 +27,4 @@
   tags:
     - neovim
     - install
+    - basis

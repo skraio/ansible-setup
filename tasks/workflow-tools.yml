@@ -6,6 +6,7 @@
   tags:
     - tools
     - install
+    - basis
 
 - name: Tools for workflow 2
   become: true
@@ -15,9 +16,11 @@
   tags:
     - tools
     - install
+    - basis
 
 - name: Make zathura the default pdf viewer
   shell: xdg-mime default org.pwmt.zathura.desktop application/pdf
   tags:
     - tools
     - install
+    - basis

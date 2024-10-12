@@ -4,6 +4,7 @@
   tags:
     - dotfiles
     - install
+    - basis
 
 - name: Cloning dotfiles
   ansible.builtin.git:
@@ -16,9 +17,11 @@
   tags:
     - dotfiles
     - install
+    - basis
 
 - name: Stow dotfiles
   shell: $HOME/dotfiles/scripts/stow_dotfiles.sh
   tags:
     - dotfiles
     - install
+    - basis
