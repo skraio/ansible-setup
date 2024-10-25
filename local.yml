@@ -1,6 +1,6 @@
 - hosts: localhost
   vars:
-     - go_version: "1.22.0"
+     - go_version: "1.23.0"
      - user_name: "skraio"
   pre_tasks:
     - name: Update Apt
@@ -9,15 +9,14 @@
         force_apt_get: true
         update_cache: true
         state: present
-  tasks: 
+  tasks:
   - import_tasks: tasks/core-setup.yml
   - import_tasks: tasks/workflow-tools.yml
   - import_tasks: tasks/nvim-setup.yml
   - import_tasks: tasks/zsh-setup.yml
-  - import_tasks: tasks/brave-setup.yml
-  - import_tasks: tasks/vscode-setup.yml
-  - import_tasks: tasks/spotify-setup.yml
-  - import_tasks: tasks/latex-setup.yml
   - import_tasks: tasks/dotfiles-setup.yml
   - import_tasks: tasks/profile-setup.yml
+  - import_tasks: tasks/font-setup.yml
+  - import_tasks: tasks/google-chrome-setup.yml
   - import_tasks: tasks/go-setup.yml
+  - import_tasks: tasks/latex-setup.yml

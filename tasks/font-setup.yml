@@ -1,0 +1,45 @@
+- name: Download Nerd Font (Hack)
+  become: true
+  get_url:
+    url: https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.zip
+    dest: /tmp/Hack.zip
+  tags:
+    - fonts
+    - main_tools
+
+- name: Install unzip
+  become: true
+  apt:
+    name:
+      - unzip
+      - fontconfig
+    state: present
+  tags:
+    - fonts
+    - main_tools
+
+- name: Ensure fonts directory exists
+  become: true
+  file:
+    path: /usr/local/share/fonts
+    state: directory
+  tags:
+    - fonts
+    - main_tools
+
+- name: Unzip Nerd Font
+  become: true
+  unarchive:
+    src: /tmp/Hack.zip
+    dest: /usr/local/share/fonts/
+    remote_src: yes
+  tags:
+    - fonts
+    - main_tools
+
+- name: Update font cache
+  become: true
+  command: fc-cache -f -v
+  tags:
+    - fonts
+    - main_tools

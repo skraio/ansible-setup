@@ -20,18 +20,16 @@
     state: present
   tags:
     - profile
-    - install
-    - basis
+    - main_tools
 
 - name: Create .Xresources file and add dpi 120
   blockinfile:
     path: "{{ ansible_env.HOME }}/.Xresources"
     block: |
-      # Xft.dpi: 120
-      Xft.dpi: 100
+      Xft.dpi: 120
+      # Xft.dpi: 100
     create: true
     state: present
   tags:
     - profile
-    - install
-    - basis
+    - main_tools

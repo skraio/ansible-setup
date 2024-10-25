@@ -1,0 +1,38 @@
+- name: Install required libraries for Chrome Browser
+  become: true
+  apt:
+    name: ["curl", "apt-transport-https"]
+  tags:
+    - chrome
+    - main_tools
+
+- name: Add Google GPG key
+  apt_key:
+    url: https://dl.google.com/linux/linux_signing_key.pub
+    state: present
+  tags:
+    - chrome
+    - main_tools
+
+- name: Add Google Chrome repository
+  apt_repository:
+    repo: 'deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main'
+    state: present
+  tags:
+    - chrome
+    - main_tools
+
+- name: Update apt cache
+  apt:
+    update_cache: yes
+  tags:
+    - chrome
+    - main_tools
+
+- name: Install Google Chrome
+  apt:
+    name: google-chrome-stable
+    state: latest
+  tags:
+    - chrome
+    - main_tools

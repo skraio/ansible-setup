@@ -3,20 +3,18 @@
   apt: name=zsh
   tags:
     - zsh
-    - install
-    - basis
+    - main_tools
 
 - name: Change shell to Zsh
-  become: no
+  become: true
   shell: chsh -s $(which zsh)
   tags:
     - zsh
-    - install
-    - basis
+    - main_tools
 
 - name: Install Oh-My-Zsh
+  become: true
   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   tags:
     - zsh
-    - install
-    - basis
+    - main_tools

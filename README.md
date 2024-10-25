@@ -1,20 +1,21 @@
-# Ansible Playbook for Tool Installation
-Automate the installation of various tools on a clean machine running Debian 12.
+# Ansible Setup
 
-## Usage
+Автоматизация установки используемых мной инструментов на Debian 12
 
-1. Remove or Comment Out CD-ROM Repository Line
+## Инструкция
+
+1. Закоментируй строку с репозиторием CD-ROM
 ```bash
-sudo nano /etc/apt/sources.list
+sudo vi /etc/apt/sources.list
 ```
 
-2. Install Ansible
+2. Установи Ansible
 ```bash
 sudo apt update -y
 sudo apt install -y git software-properties-common ansible
 ```
 
-3. Execute the Ansible Playbook
+3. Выполни Ansible-playbook
 ```bash
-ansible-pull -U https://github.com/skraio/debian12-ansible.git -t basis
+ansible-pull -U https://github.com/skraio/ansible-setup.git -t basis
 ```

@@ -5,8 +5,7 @@
     update_cache: yes
   tags:
     - tools
-    - install
-    - basis
+    - main_tools
 
 - name: Tools for workflow 2
   become: true
@@ -15,5 +14,4 @@
     update_cache: yes
   tags:
     - tools
-    - install
-    - basis
+    - main_tools

@@ -2,8 +2,7 @@
   shell: rm -rf ~/neovim
   tags:
     - neovim
-    - install
-    - basis
+    - main_tools
 
 - name: Clone Neovim
   ansible.builtin.git:
@@ -11,20 +10,17 @@
     dest: "{{ lookup('env', 'HOME') }}/neovim"
   tags:
     - neovim
-    - install
-    - basis
+    - main_tools
 
 - name: Build Neovim
   shell: "cd {{ lookup('env', 'HOME') }}/neovim && make -j 20"
   tags:
     - neovim
-    - install
-    - basis
+    - main_tools
 
 - name: Install Neovim
   become: true
   shell: "cd {{ lookup('env', 'HOME') }}/neovim && make CMAKE_BUILD_TYPE=Release && make install"
   tags:
     - neovim
-    - install
-    - basis
+    - main_tools
