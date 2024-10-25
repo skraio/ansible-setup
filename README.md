@@ -17,5 +17,5 @@ sudo apt install -y git software-properties-common ansible
 
 3. Выполни Ansible-playbook
 ```bash
-ansible-pull -U https://github.com/skraio/ansible-setup.git -t basis
+ansible-pull -U https://github.com/skraio/ansible-setup.git -t main_tools
 ```
