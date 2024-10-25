@@ -11,15 +11,8 @@
 - name: Tools for workflow 2
   become: true
   apt:
-    name: ["zathura", "telegram-desktop", "flameshot", "obs-studio"]
+    name: ["zathura", "flameshot", "obs-studio"]
     update_cache: yes
-  tags:
-    - tools
-    - install
-    - basis
-
-- name: Make zathura the default pdf viewer
-  shell: xdg-mime default org.pwmt.zathura.desktop application/pdf
   tags:
     - tools
     - install
