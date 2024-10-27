@@ -9,7 +9,7 @@
 - name: Install system packages 2
   become: true
   apt:
-    name: ["unzip", "curl", "git", "python3.11-venv"]
+    name: ["unzip", "curl", "git", "python3.12-venv", "ncal"]
   tags:
     - core
     - main_tools
